@@ -1,0 +1,54 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <math.h>
+float cash(void);
+int change();
+int main(void){
+    printf("%i\n",change());
+}
+
+float cash(void){
+    float cash;
+    do {
+     cash =  get_float("Change owed: ");
+      
+    }
+    while
+    (cash < 0 );
+    return cash;
+}
+
+int change(){
+    int quarter = 25;
+    int dime = 10;
+    int nickel = 5;
+    int pennies = 1;
+    int cents = round(cash() * 100);
+    int spare;
+    int coins = 0;
+
+if ( cents >= quarter){
+    spare = cents % quarter;
+    coins = coins + (cents / quarter);
+    cents = spare;
+}
+if ( cents >= dime){
+    spare = cents % dime;
+    coins = coins + (cents / dime);
+    cents = spare;
+}
+if ( cents >= nickel){
+    spare = cents % nickel;
+    coins = coins + (cents / nickel);
+    cents = spare;
+    
+}
+
+if ( cents >= pennies){
+    spare = cents % pennies;
+    coins = coins + (cents / pennies);
+    
+}
+return coins;
+    
+}
